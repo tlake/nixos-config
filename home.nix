@@ -40,6 +40,8 @@
     element-desktop
     signal-desktop
     slack
+    tootle
+    tuba
 
     # gaming
     steam
@@ -60,6 +62,7 @@
     # utils
     #ripgrep # recursively searches directories for a regex pattern
     jq # A lightweight and flexible command-line JSON processor
+    nfs-utils
     #yq-go # yaml processor https://github.com/mikefarah/yq
     #eza # A modern replacement for ‘ls’
     #fzf # A command-line fuzzy finder
@@ -122,7 +125,6 @@
     pinentryFlavor = "curses";
   };
 
-  # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
     userName = "Tanner Lake";
@@ -162,6 +164,14 @@
     };
   };
 
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    # TODO add your custom bashrc here
+    bashrcExtra = ''
+      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+    '';
+
   # starship - an customizable prompt for any shell
   #programs.starship = {
   #  enable = true;
@@ -188,14 +198,6 @@
   #    selection.save_to_clipboard = true;
   #  };
   #};
-
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-    # TODO add your custom bashrc here
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-    '';
 
     # set some aliases, feel free to add more or remove some
     shellAliases = {

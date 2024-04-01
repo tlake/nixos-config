@@ -125,6 +125,7 @@
     inxi
     lshw
     neovim
+    nfs-utils
     silver-searcher
     tree
     vim
@@ -167,6 +168,14 @@
 
       192.168.0.200 bolt
     '';
+
+  fileSystems = {
+    "/run/mount/tanner/nas" = {
+      device = "mansionsyrup:/nas/data";
+      fsType = "nfs";
+      options = [ "x-systemd.automount" "noauto" ];
+    };
+  };
 
   fonts = {
     enableDefaultPackages = true;
