@@ -12,7 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
-  boot.supportedFilesystems = [ "btrfs" "ntfs" ];
+  boot.supportedFilesystems = [ "btrfs" "ntfs" "hfs+" "hfsplus" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/ee644ae9-7bee-41f0-bd5b-5cb342a7fbb5";
