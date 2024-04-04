@@ -115,6 +115,8 @@
     VISUAL = "nvim";
   };
 
+  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -122,12 +124,14 @@
     curl
     git
     git-crypt
+    hfsprogs
     inxi
     lshw
     neovim
     nfs-utils
     silver-searcher
     tree
+    udisks
     vim
     wget
     zsh
@@ -210,11 +214,11 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
     # of just the bare essentials.
-    #powerManagement.enable = false;
+    powerManagement.enable = false;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    #powerManagement.finegrained = false;
+    powerManagement.finegrained = false;
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
@@ -223,15 +227,15 @@
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    #open = false;
+    open = false;
 
-    # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
-    #nvidiaSettings = true;
+    # Enable the Nvidia settings menu, accessible via `nvidia-settings`.
+    nvidiaSettings = true;
+
+    forceFullCompositionPipeline = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-    forceFullCompositionPipeline = true;
   };
 
   # This value determines the NixOS release from which the default
