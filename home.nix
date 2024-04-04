@@ -59,8 +59,11 @@
     gh
     git
 
+    nodejs_21
+
     # utils
     #ripgrep # recursively searches directories for a regex pattern
+    hfsprogs
     jq # A lightweight and flexible command-line JSON processor
     nfs-utils
     #yq-go # yaml processor https://github.com/mikefarah/yq
@@ -68,14 +71,16 @@
     #fzf # A command-line fuzzy finder
 
     # networking tools
-    #mtr # A network diagnostic tool
-    #iperf3
-    dnsutils  # `dig` + `nslookup`
-    #ldns # replacement of `dig`, it provide the command `drill`
     #aria2 # A lightweight multi-protocol & multi-source command-line download utility
-    #socat # replacement of openbsd-netcat
-    nmap # A utility for network discovery and security auditing
+    dnsutils  # `dig` + `nslookup`
     ipcalc  # it is a calculator for the IPv4/v6 addresses
+    #iperf3
+    #ldns # replacement of `dig`, it provide the command `drill`
+    #mtr # A network diagnostic tool
+    nmap # A utility for network discovery and security auditing
+    protonvpn-cli
+    protonvpn-gui
+    #socat # replacement of openbsd-netcat
 
     # misc
     #cowsay
@@ -100,6 +105,7 @@
     glow # markdown previewer in terminal
     hugo # static site generator
     kate # ide
+    obsidian
 
     btop  # replacement of htop/nmon
     iotop # io monitoring
