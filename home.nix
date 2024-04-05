@@ -105,6 +105,7 @@
     glow # markdown previewer in terminal
     hugo # static site generator
     kate # ide
+    libreoffice
     obsidian
 
     btop  # replacement of htop/nmon
